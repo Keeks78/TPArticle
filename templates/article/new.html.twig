@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création d'un Article{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1>Créer un Article</h1>
+
+        {{ form_start(form) }}
+
+        {{ form_widget(form) }}
+        
+<a href="{{path('articles_liste')}}">
+       <button type="button" class="btn btn-danger" >Annuler</button>
+</a>
+
+
+        {{ form_end(form) }}
+    </div>
+
+    
+{% endblock %}
+
+

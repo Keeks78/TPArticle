@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes articles{% endblock %}
+
+{% block body %}
+
+
+<div class="example-wrapper">
+<a href="{{path('articles_create')}}">
+<button type="button" class="btn btn-primary" >Créer un article !</button>
+</a>
+    <h1>Tableau des articles</h1>
+    <div class="row">
+        {% for article in articles %}
+        <div class="col-md-4">
+    <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Libellé</th>
+      <th scope="col">Prix</th>
+      <th scope="col">Bouton</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-active">
+      <td>{{article.id}}</td>
+      <td>{{article.libelle}}</td>
+      <td>{{article.prix}} euros</td>
+      <td><button type="button" class="btn btn-primary" >Modifier</button><button type="button" data-action="delete" data-target="#block_{{article.id}}" class="btn btn-danger">Supprimer</button></td>
+    </tr>
+    </tbody>
+    </table>
+        
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
